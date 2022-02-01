@@ -11,9 +11,9 @@ import java.util.*;
 
 public class CalculateScore {
 	
-	public static int getInput() {
+	public static int getInput() { // method for getting input
 		Scanner scan = new Scanner(System.in);
-		boolean isValid = false;
+		boolean isValid = false; // flag variable for validation
 		int input = 0;
 		while(!isValid) {
 			try {
@@ -35,9 +35,9 @@ public class CalculateScore {
 		int totalObtainedMark = 0, totalTestMark = 0;
 		for(int i = 1; i <= numberOfExercises; i++) {
 			System.out.println("Score received for exercise "+i+": ");
-			totalObtainedMark += getInput();
+			totalObtainedMark += getInput(); // adding and keeping track of total obtained marks
 			System.out.println("Total points possible for exercise "+i+": ");
-			totalTestMark += getInput();
+			totalTestMark += getInput(); // adding and keeping track of total test marks
 		}
 		double percentage = totalObtainedMark*100.00/totalTestMark;
 		System.out.println("Your total is " + totalObtainedMark + " out of " + totalTestMark 
