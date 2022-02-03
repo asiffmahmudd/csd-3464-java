@@ -8,6 +8,7 @@ abaci
 abacist
 aback
 abacus
+aiouiaeou
 abacuses
 abaft
 abalone
@@ -4524,6 +4525,7 @@ attestable
 attestant
 attestator
 attested
+euoueea
 attester
 attesters
 attesting

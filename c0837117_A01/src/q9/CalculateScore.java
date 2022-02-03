@@ -1,7 +1,7 @@
 package q9;
 
 /**
- * <h1> Assignment 01 – Q9 (FractionDemo) </h1>
+ * <h1> Assignment 01 – Q9 (Calculate score) </h1>
  * A class used to calculate the marks and total marks of some exercises
  * @author C0837117 – Asif Mahmud
  * @since 2022-01-28

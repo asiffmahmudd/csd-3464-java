@@ -1,7 +1,7 @@
 package q3;
 import java.util.*;
 /**
- * <h1> Assignment 01 – Q3 (FractionDemo) </h1>
+ * <h1> Assignment 01 – Q3 (Height Estimator) </h1>
  * A class used to find the height of the child based on it's parent's height
  * @author C0837117 – Asif Mahmud
  * @since 2022-01-28
