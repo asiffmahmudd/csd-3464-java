@@ -1,0 +1,48 @@
+package q8;
+
+public class Cryptarithmetic {
+
+	public static void main(String[] args) {
+		int minValue = 0, maxValue = 9;
+		String word1 = "TOO";
+		String word2 = "GOOD";
+		String sentence[] = (word1+word2).split(""); 
+		String letters = "";
+		for (String letter: sentence) {
+			if(!letters.contains(letter)) {
+				letters += letter;
+			}
+		}
+		int TOO = 0, GOOD = 0, leftHandSide = 0, rightHandSide = 0, found = 0;
+		int T = 0, O = 0, G= 0, D = 0;
+		int resultT = 0, resultO = 0, resultG = 0, resultD = 0;
+		for(T = minValue; T <= maxValue && found == 0; T++) {
+			for(O = minValue; O <= maxValue && found == 0; O++) {
+				if(T != O) {
+					for(G = minValue; G <= maxValue && found == 0; G++) {
+						if(G != O && G != T) {
+							for(D = minValue; D <= maxValue && found == 0; D++) {
+								if(D != G && D != O && D != T) {
+									TOO = Integer.valueOf(String.valueOf(T)+String.valueOf(O)+String.valueOf(O));
+									GOOD = Integer.valueOf(String.valueOf(G)+String.valueOf(O)+String.valueOf(O)+String.valueOf(D));
+									leftHandSide = TOO + TOO + TOO + TOO;
+									rightHandSide = GOOD;
+									if(leftHandSide == rightHandSide) {
+										found = 1;
+										resultT = T;
+										resultO = O;
+										resultG = G;
+										resultD = D;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		System.out.println("The solution to the puzzle is T: " + T + ", O: " + O + ", G: " + G + ", D: " + D);
+		System.out.println("TOO: " + TOO + ", GOOD: " + GOOD);
+	}
+
+}

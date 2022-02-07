@@ -1,0 +1,20 @@
+package q14;
+import java.io.*;
+import java.util.*;
+
+public class ConsecutiveVowels {
+	public static void main(String[] args) {
+		Scanner fileIn = null;
+		try {
+			fileIn = new Scanner(new FileInputStream("data.txt"));
+		}
+		catch (FileNotFoundException e) {
+			System.out.println("File not found.");
+	    }
+		
+		while (fileIn.hasNextLine()) {
+			String data = fileIn.nextLine();
+			System.out.println(data);
+		}
+	}	
+}

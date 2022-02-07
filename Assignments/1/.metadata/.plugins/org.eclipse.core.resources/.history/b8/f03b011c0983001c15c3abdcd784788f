@@ -1,0 +1,17 @@
+package q3;
+import java.util.*;
+/**
+ * <h1> Assignment 01 – Q3 (FractionDemo) </h1>
+ * A class used to find the height of the child based on it's parent's height
+ * @author C0837117 – Asif Mahmud
+ * @since 2022-01-28
+ */
+
+public class HeightEstimate {
+
+	public static void main(String[] args) {
+		String gender = "";
+		Scanner scan = new Scanner(System.in);
+	}
+
+}

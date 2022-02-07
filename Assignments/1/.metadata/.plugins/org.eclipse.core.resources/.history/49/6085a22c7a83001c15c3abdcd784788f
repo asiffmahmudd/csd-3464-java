@@ -1,0 +1,38 @@
+package q14;
+import java.io.*;
+import java.util.*;
+
+public class ConsecutiveVowels {
+	public static void main(String[] args) {
+		Scanner fileIn = null;
+		try {
+			fileIn = new Scanner(new FileInputStream("data.txt"));
+		}
+		catch (FileNotFoundException e) {
+			System.out.println("File not found.");
+	    }
+		String result = "";
+		int maxVowels = 0;
+		int vowels = 0;
+		while (fileIn.hasNextLine()) {
+			String word = fileIn.nextLine();
+			char data[] = word.toCharArray();
+			vowels = 0;
+			for(int i = 1; i < data.length; i++) {
+				if(data[i] == 'a' || data[i] == 'e' || data[i] == 'i' || data[i] == 'o' || data[i] == 'u' ||
+				data[i] == 'A' || data[i] == 'E' || data[i] == 'I' || data[i] == 'O' || data[i] == 'U') {
+					vowels++;
+				}
+				else {
+					System.out.println(word);
+					if(maxVowels < vowels) {
+						maxVowels = vowels;
+						result = word;
+					}
+					vowels = 0;
+				}
+			}
+		}
+		System.out.println(result);
+	}	
+}
