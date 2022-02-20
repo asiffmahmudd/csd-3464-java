@@ -1,3 +1,4 @@
+package q1;
 
 public class EmployeeDemo {
 
@@ -22,6 +23,9 @@ public class EmployeeDemo {
 		e2.setDateOfHireYear(2022);
 		e2.setName("First", "middle", "last");
 		System.out.println(e2.toString());
+		
+		Employee e = new Employee(e1);
+		System.out.println(e);
 	}
 
 }

@@ -1,3 +1,4 @@
+package q1;
 /**
  * Class used to represent a person's name
  * @author Asif Mahmud

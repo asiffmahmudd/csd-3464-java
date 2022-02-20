@@ -1,7 +1,8 @@
+package q1;
 /* 
  Name: Asif Mahmud
  ID: C0837117
- Date
+ Date: 2/19/2022
 */
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
