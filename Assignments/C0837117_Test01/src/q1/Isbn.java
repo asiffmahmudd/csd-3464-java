@@ -51,11 +51,69 @@ public class Isbn {
 		
 		StringTokenizer strToken = new StringTokenizer(isbn, String.valueOf(seperator));
 		count = 0;
-		while(strToken.hasMoreTokens() && count <= 3) {
-			System.out.println(strToken.nextToken());
+		while(strToken.hasMoreTokens()) {
+			String str = strToken.nextToken();
+			int strTokenLength = str.length();
+			
+			if(!checkIfDigit(str, strTokenLength)) { 
+				return false;
+			}
+			
+			if(count == 0) {
+				if(strTokenLength != 3) {
+					return false;
+				}
+			}
+			else if(count == 1) {
+				if(strTokenLength < 1 || strTokenLength > 5) {
+					return false;
+				}
+			}
+			else if(count == 2) {
+				if(strTokenLength < 2 || strTokenLength > 7) {
+					return false;
+				}
+			}
+			else if(count == 3) {
+				if(strTokenLength < 1 || strTokenLength > 6) {
+					return false;
+				}
+			}
+			else if(count == 4) {
+				if(strTokenLength != 1) {
+					return false;
+				}
+				if(calculateCheckDigit(isbn) != Integer.parseInt(str)) {
+					return false;
+				}
+			}
+			
 			count++;
 		}
-		return false;
+		return true;
 	}
 	
+	public static int calculateCheckDigit(String isbn) {
+		int sum = 0;
+		for(int i = 0; i < isbn.length(); i++) {
+			if(i % 2 == 0) {
+				sum += (int)isbn.charAt(i);
+			}
+			else {
+				sum += 3*(int)isbn.charAt(i);
+			}
+		}
+		
+		int result = 10 - (sum % 10);
+		return result;
+	}
+	
+	private static boolean checkIfDigit(String str, int strTokenLength) {
+		for(int i = 0; i < strTokenLength; i++) {
+			if(!Character.isDigit(str.charAt(i))) {
+				return false;
+			}
+		}
+		return true;
+	}
 }
