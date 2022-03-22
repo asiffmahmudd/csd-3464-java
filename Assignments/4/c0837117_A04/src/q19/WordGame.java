@@ -23,6 +23,7 @@ public class WordGame{
 		String userWord;
 		String fileWord;
 
+		// creating the scanner object
 		Scanner scan = new Scanner(System.in);
 		userWord = scan.nextLine();
 		
@@ -31,23 +32,25 @@ public class WordGame{
 		
 		System.out.println("******FOUND MATCHES******");
 		try {
+			// opening file
 			File myObj = new File("words.txt");
 			Scanner reader = new Scanner(myObj);
+			
+			// going through each line of the file
 		    while (reader.hasNextLine()) {
 		    	fileWord = reader.nextLine();
 		    	if(canBeGeneratedFrom(fileWord, userWord)) {
 		    		displayHist(fileWord);
 		    	}
 		    }
+		    
+		    //closing file
 		    reader.close();
+		// catching exception
 	    } catch (FileNotFoundException e) {
 	      System.out.println("An error occurred.");
 	      e.printStackTrace();
 	    }
-		/*TODO: Go line by line through the words.txt reading the word 
-		on each line into fileWord. If fileWord can be constructed
-		using only the letters in userWord display the fileWord
-		along with its histogram. */
 	}
 	 /**
 	 * Generate histogram containing the occurrence of letters A-Z
@@ -73,7 +76,9 @@ public class WordGame{
 		int[] histogram = generateHistogram(word);
 		
 		System.out.print(word.toUpperCase());
+		//going through every character
 		for(int i = 0; i < histogram.length; i++) {
+			// checking if the character exists in the word
 			if(histogram[i] > 0) {
 				System.out.print(" -> " + (char)('A'+i) + "|" + histogram[i]);
 			}
